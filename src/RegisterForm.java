@@ -234,7 +234,7 @@ public class RegisterForm extends javax.swing.JFrame {
         jComboBox1.setBackground(new java.awt.Color(204, 204, 255));
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "kg", "lbs" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "kg" }));
 
         jText_cm.setBackground(new java.awt.Color(108, 122, 137));
         jText_cm.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -479,7 +479,7 @@ public class RegisterForm extends javax.swing.JFrame {
     		JOptionPane.showMessageDialog(rootPane,  "Enter valid password!", "Enter Password", 0);
     		return;
     	}else {
-    	    if(jPasswordField1.getPassword().length < 8){
+    	    if(jPasswordField1.getPassword().length < 8 || jPasswordField1.getPassword().length > 15){
                 JOptionPane.showMessageDialog(rootPane,  "Password must be at least 8 characters!", "Enter Valid Password", 0);
                 return;
             }
@@ -511,10 +511,19 @@ public class RegisterForm extends javax.swing.JFrame {
     		}
     	}	
     	
-    	if(jText_feet.getText().contentEquals("")) {
-    		JOptionPane.showMessageDialog(rootPane,  "Enter valid height!", "Feet", 0);
+    	if(jText_feet.getText().contentEquals("") && jText_cm.getText().contentEquals(""))
+    	{
+    		JOptionPane.showMessageDialog(rootPane,  "Enter valid height!", "HEIGHT!", 0);
     		return;
-    	}else {
+    	}
+    	else if(!jText_cm.getText().contentEquals("")){
+            try {
+                c.profile.setCM(Double.valueOf(jText_cm.getText()));
+            }catch(NumberFormatException e) {
+                JOptionPane.showMessageDialog(rootPane,  "Enter valid height!", "cm", 0);
+            }
+        }
+    	else {
     		try {
     			c.profile.setFeet(Double.valueOf(jText_feet.getText()));
     		}catch(NumberFormatException e) {
@@ -523,10 +532,18 @@ public class RegisterForm extends javax.swing.JFrame {
     	}	
     	
     	
-    	if(jText_inch.getText().contentEquals("")) {
-    		JOptionPane.showMessageDialog(rootPane,  "Enter valid height!", "Inch", 0);
+    	if(jText_inch.getText().contentEquals("") && jText_cm.getText().contentEquals("")) {
+    		JOptionPane.showMessageDialog(rootPane,  "Enter valid height!", "HEIGHT!", 0);
     		return;
-    	}else {
+    	}
+        else if(!jText_cm.getText().contentEquals("")){
+            try {
+                c.profile.setCM(Double.valueOf(jText_cm.getText()));
+            }catch(NumberFormatException e) {
+                JOptionPane.showMessageDialog(rootPane,  "Enter valid height!", "cm", 0);
+            }
+        }
+    	else {
     		try {
     			c.profile.setInches(Double.valueOf(jText_inch.getText()));
     		}catch(NumberFormatException e) {
@@ -541,14 +558,16 @@ public class RegisterForm extends javax.swing.JFrame {
     	}else {
     		c.profile.setUnits("customary");
     	}
-    	
+
+
+
     	c.addProfile(c.profile);
     	System.out.println(c.profile.getFirstName());
     	
     }//GEN-LAST:event_jButtonCreateActionPerformed
 
     private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
-        // TODO add your handling code here:
+        this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
     private void jTextFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFirstNameActionPerformed
@@ -590,7 +609,7 @@ public class RegisterForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButtonCustomaryMouseClicked
 
     private void jButtonCreateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCreateMouseClicked
-        DashBoard dashboard = new  DashBoard(c.profile);
+        DashBoard dashboard = new DashBoard(c.profile);
         dashboard.setVisible(true);
         dashboard.pack();
         dashboard.setLocationRelativeTo(null);

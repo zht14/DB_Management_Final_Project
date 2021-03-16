@@ -11,6 +11,7 @@ public class Profile{
     private double weight;
     private String units;
     private double BMI;
+    private double cm;
 
 
     public Profile() {
@@ -23,6 +24,7 @@ public class Profile{
         weight = 0;
         units = "";
         BMI = 0;
+        cm = 0;
     }
     
     public String getUsername() {
@@ -56,6 +58,8 @@ public class Profile{
     public double getWeight() {
     	return this.weight;
     }
+
+    public double getCM(){ return this.cm; }
     
     
     
@@ -79,7 +83,8 @@ public class Profile{
     }
     
 
-    
+    public void setCM(double cm){ this.cm = cm; }
+
     public void setFeet(double feet) {
     	this.feet = feet;
     }

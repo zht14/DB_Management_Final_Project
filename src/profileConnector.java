@@ -31,7 +31,15 @@ public class profileConnector {
     
     public boolean addProfile(Profile e){
         try {
-            String query = "INSERT INTO `tbl_login` (`userName`, `password`, `firstName`, `lastName`, `weight`, `feet`, `inches`,`units`) VALUES ('"+e.getUsername()+"', '"+e.getPassword()+"', '"+e.getFirstName()+"', '"+e.getLastName()+"', '"+e.getWeight()+"', '"+e.getFeet()+"', '"+e.getInches()+"', '"+e.getUnits()+"');";
+            if(e.getUnits().equals("customary"))
+            {
+                e.setUnits("metric");
+                System.out.println(e.getFeet()*30.48 + e.getInches() * 2.54);
+                e.setCM(e.getFeet()*30.48 + e.getInches() * 2.54);
+            }
+            String query = "INSERT INTO Users(first_name, last_name, user_name, pass_word, height_cm, weight_kg) ";
+            query += "VALUES('"+e.getFirstName().toUpperCase()+"', '"+e.getLastName().toUpperCase()+"' , '"+e.getUserName()+"' , '"+e.getPassword()+"', '"+e.getCM()+"', '"+e.getWeight()+"');";
+
         	stmt.executeUpdate(query);
             return true;
         } catch (SQLException throwables) {
@@ -43,11 +51,11 @@ public class profileConnector {
     public boolean usernameExists(String username){
         boolean exists = false;
         try {
-            String query = "SELECT userName FROM tbl_login";
+            String query = "SELECT user_name FROM Users";
             ResultSet rs = stmt.executeQuery(query);
 
             while(rs.next()){
-                String userName = rs.getString("userName");
+                String userName = rs.getString("user_name");
                 if(userName.equals(username)) {
                     exists = true;
                 }
@@ -63,30 +71,28 @@ public class profileConnector {
         boolean isValid = false;
         try {
 
-            String query = "SELECT userName, password, firstName, lastName, weight, feet, inches, units FROM tbl_login";
+            String query = "SELECT first_name, last_name, user_name, pass_word, height_cm, weight_kg FROM Users";
             ResultSet rs = stmt.executeQuery(query);
 
             while(rs.next()){
-                String userName = rs.getString("userName");
-                String pass = rs.getString("password");
+                String userName = rs.getString("user_name");
+                String pass = rs.getString("pass_word");
 
 
                 if(userName.equals(username) && pass.equals(passwordEntered)) {
                     // add values to profile
-                    profile.setUsername(rs.getString("userName"));
-                    profile.setPassword(rs.getString("password"));
-                    profile.setFirstName(rs.getString("firstName"));
-                    profile.setLastName(rs.getString("lastName"));
-                    profile.setWeight(rs.getDouble("weight"));
-                    profile.setFeet(rs.getDouble("feet"));
-                    profile.setInches(rs.getDouble("inches"));
-                    profile.setUnits(rs.getString("units"));
+                    profile.setUsername(rs.getString("user_name"));
+                    profile.setPassword(rs.getString("pass_word"));
+                    profile.setFirstName(rs.getString("first_name"));
+                    profile.setLastName(rs.getString("last_name"));
+                    profile.setWeight(rs.getDouble("weight_kg"));
+                    profile.setCM(rs.getDouble("height_cm"));
                     isValid = true;
                 }
             }
 
         } catch (SQLException throwables) {
-            //return false;
+            return false;
         }
         return isValid;
     }
