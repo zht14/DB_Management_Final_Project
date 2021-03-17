@@ -1,4 +1,0 @@
-
-
-Database Management Final Project. 
-
