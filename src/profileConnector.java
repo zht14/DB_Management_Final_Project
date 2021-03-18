@@ -96,6 +96,33 @@ public class profileConnector {
         }
         return isValid;
     }
+
+    public boolean addIPAddr(Profile e)
+    {
+        try
+        {
+
+            String query = "SELECT user_id FROM Users WHERE user_name =";
+            query += "'"+e.getUserName()+"';";
+            ResultSet rs = stmt.executeQuery(query);
+            rs.next();
+
+
+            int id_rs = rs.getInt("user_id");
+
+
+            query = "INSERT INTO User_Location(fk_user_id, LocID, IPAddr) ";
+            query += "VALUES('"+id_rs+"', '"+id_rs+"' , '"+e.getIP_Addr()+"');";
+            stmt.executeUpdate(query);
+        }
+        catch(SQLException throwables)
+        {
+            System.out.println("Fail to insert user IP address");
+        }
+
+        return false;
+
+    }
     
 	
 }

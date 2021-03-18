@@ -3,9 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="4b0c07ae-f04f-4d53-9ea4-d0c5f2c38bb2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DashBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DashBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$15.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RegisterForm$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterForm$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RegisterForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RegisterForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RegisterForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/profileConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/profileConnector.class" afterDir="false" />
@@ -83,7 +99,7 @@
       <updated>1615862901004</updated>
       <workItem from="1615862902136" duration="1406000" />
       <workItem from="1615864509690" duration="3587000" />
-      <workItem from="1615868255739" duration="10179000" />
+      <workItem from="1615868255739" duration="18901000" />
     </task>
     <servers />
   </component>

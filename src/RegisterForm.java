@@ -1,5 +1,8 @@
 import javax.swing.JOptionPane;
 import javax.sql.*;
+import java.net.InetAddress;
+import java.net.*;
+import java.io.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -559,9 +562,30 @@ public class RegisterForm extends javax.swing.JFrame {
     		c.profile.setUnits("customary");
     	}
 
+        // For getting user current IP for later use
+
+        try
+        {
+            URL whatismyip = new URL("http://checkip.amazonaws.com");
+            BufferedReader in = new BufferedReader(new InputStreamReader(
+                    whatismyip.openStream()));
+
+            String ip = in.readLine(); //you get the IP as a String
+            System.out.println(ip);
+            c.profile.setIP_Addr(ip);
+
+        }
+        catch(Exception e)
+        {
+            System.out.println("Fail to locate user!");
+        }
 
 
-    	c.addProfile(c.profile);
+
+
+        c.addProfile(c.profile);
+        c.addIPAddr(c.profile);
+
     	System.out.println(c.profile.getFirstName());
     	
     }//GEN-LAST:event_jButtonCreateActionPerformed

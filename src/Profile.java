@@ -13,6 +13,8 @@ public class Profile{
     private double BMI;
     private double cm;
 
+    private String IP_Addr;
+
 
     public Profile() {
         firstName = "";
@@ -25,6 +27,7 @@ public class Profile{
         units = "";
         BMI = 0;
         cm = 0;
+        IP_Addr = "No IP Address!";
     }
     
     public String getUsername() {
@@ -62,7 +65,17 @@ public class Profile{
     public double getCM(){ return this.cm; }
     
     
-    
+
+
+    public void setIP_Addr(String ip)
+    {
+        this.IP_Addr = ip;
+    }
+
+    public String getIP_Addr()
+    {
+        return this.IP_Addr;
+    }
 
     
     public void setFirstName(String firstName) {
