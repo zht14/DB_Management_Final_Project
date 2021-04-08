@@ -18,7 +18,7 @@ public class DashBoard extends javax.swing.JFrame {
     }
 
     public DashBoard(Profile p) {
-        profile = p;
+        this.profile = p;
         System.out.println(p.getFirstName());
         System.out.println(p.getUsername());
         System.out.println(p.getPassword());
@@ -274,12 +274,14 @@ public class DashBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelMinimizeMouseClicked
 
     private void jLabelUserProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUserProfileMouseClicked
-        RegisterForm regForm = new RegisterForm();
-        regForm.setVisible(true);
-        regForm.pack();
-        regForm.setLocationRelativeTo(null);
-        regForm.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+
+        userInfoForm userForm = new userInfoForm(this.profile);
+        userForm.setVisible(true);
+        userForm.pack();
+        userForm.setLocationRelativeTo(null);
+        userForm.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
         //this.dispose();
+
     }//GEN-LAST:event_jLabelUserProfileMouseClicked
 
     private void jLabelTimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTimerMouseClicked
@@ -333,11 +335,11 @@ public class DashBoard extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new DashBoard().setVisible(true);
             }
-        });
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
