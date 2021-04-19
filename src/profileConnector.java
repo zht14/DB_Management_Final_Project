@@ -37,7 +37,7 @@ public class profileConnector {
                 System.out.println(e.getFeet()*30.48 + e.getInches() * 2.54);
                 e.setCM(e.getFeet()*30.48 + e.getInches() * 2.54);
             }
-            String query = "INSERT INTO Users(first_name, last_name, user_name, pass_word, height_cm, weight_kg) ";
+            String query = "INSERT INTO users(first_name, last_name, user_name, pass_word, height_cm, weight_kg) ";
             query += "VALUES('"+e.getFirstName().toUpperCase()+"', '"+e.getLastName().toUpperCase()+"' , '"+e.getUserName()+"' , '"+e.getPassword()+"', '"+e.getCM()+"', '"+e.getWeight()+"');";
 
         	stmt.executeUpdate(query);
@@ -51,7 +51,7 @@ public class profileConnector {
     public boolean usernameExists(String username){
         boolean exists = false;
         try {
-            String query = "SELECT user_name FROM Users";
+            String query = "SELECT user_name FROM users";
             ResultSet rs = stmt.executeQuery(query);
 
             while(rs.next()){
@@ -71,7 +71,7 @@ public class profileConnector {
         boolean isValid = false;
         try {
 
-            String query = "SELECT first_name, last_name, user_name, pass_word, height_cm, weight_kg FROM Users";
+            String query = "SELECT first_name, last_name, user_name, pass_word, height_cm, weight_kg FROM users";
             ResultSet rs = stmt.executeQuery(query);
 
             while(rs.next()){
@@ -102,7 +102,7 @@ public class profileConnector {
         try
         {
 
-            String query = "SELECT user_id FROM Users WHERE user_name =";
+            String query = "SELECT user_id FROM users WHERE user_name =";
             query += "'"+e.getUserName()+"';";
             ResultSet rs = stmt.executeQuery(query);
             rs.next();
@@ -111,7 +111,7 @@ public class profileConnector {
             int id_rs = rs.getInt("user_id");
 
 
-            query = "INSERT INTO User_Location(fk_user_id, LocID, IPAddr) ";
+            query = "INSERT INTO user_location(fk_user_id, loc_id, ip_addr) ";
             query += "VALUES('"+id_rs+"', '"+id_rs+"' , '"+e.getIP_Addr()+"');";
             stmt.executeUpdate(query);
         }

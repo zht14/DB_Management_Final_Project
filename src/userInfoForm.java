@@ -180,7 +180,7 @@ public class userInfoForm extends javax.swing.JFrame {
         jButtonCreate.setBackground(new java.awt.Color(34, 167, 240));
         jButtonCreate.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButtonCreate.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCreate.setText("Exit");
+        jButtonCreate.setText("Log Out");
         jButtonCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonCreate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
