@@ -46,8 +46,10 @@ public class DashBoard extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabelTimer = new javax.swing.JLabel();
         jLabelBMICalc = new javax.swing.JLabel();
+        jLabelLoc = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabelLocChar = new javax.swing.JLabel();
         jLabelLog = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnTimer = new javax.swing.JButton();
@@ -139,6 +141,14 @@ public class DashBoard extends javax.swing.JFrame {
             }
         });
 
+        jLabelLoc.setIcon(new javax.swing.ImageIcon("./location.png")); // NOI18N
+        jLabelLoc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelLoc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                //jLabelLocMouseClicked(evt);
+            }
+        });
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Timer & Stopwatch");
@@ -146,6 +156,10 @@ public class DashBoard extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("BMI Calculator");
+
+        jLabelLocChar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelLocChar.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelLocChar.setText("Location");
 
         jLabelLog.setIcon(new javax.swing.ImageIcon("./log.png")); // NOI18N
         jLabelLog.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -190,6 +204,10 @@ public class DashBoard extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(132, 132, 132))
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(465, 465, 465)
+                                                .addComponent(jLabelLocChar)
+                                                .addGap(132, 132, 132))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabelBMICalc, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,6 +215,10 @@ public class DashBoard extends javax.swing.JFrame {
                                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                                                 .addGap(32, 32, 32)
                                                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+
+                                                        .addComponent(jLabelLoc,javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,6 +254,10 @@ public class DashBoard extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(jLabelBMICalc, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                                .addGap(100,100,100)
+                                                .addComponent(jLabelLoc,javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                                 .addGap(6, 6, 6)
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                         .addComponent(btnTimer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -241,7 +267,10 @@ public class DashBoard extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel6)
-                                        .addComponent(jLabel2))
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabelLocChar))
+                                /*.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabelLocChar))*/
                                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -291,6 +320,11 @@ public class DashBoard extends javax.swing.JFrame {
     private void jLabelBMICalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBMICalcMouseClicked
         BMIcalc_Dash BMIDB = new BMIcalc_Dash();
     }//GEN-LAST:event_jLabelBMICalcMouseClicked
+
+    private void jLabelLocMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBMICalcMouseClicked
+        //Add your code
+        // return;
+    }
 
     private void btnTimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTimerMouseClicked
         timer2 TimerGUI = new timer2();
@@ -350,6 +384,8 @@ public class DashBoard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabelLocChar;
+    private javax.swing.JLabel jLabelLoc;
     private javax.swing.JLabel jLabelBMICalc;
     private javax.swing.JLabel jLabelClose;
     private javax.swing.JLabel jLabelLog;
