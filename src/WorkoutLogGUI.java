@@ -5,19 +5,29 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Andrew
+ * @author
  */
 public class WorkoutLogGUI extends javax.swing.JFrame {
     private WorkoutLogController logController;
     private WorkoutLog logModel;
     private DefaultListModel<Exercise> listModel;
 
+
     /**
      * Creates new form WorkoutLogGUI
      */
+    public WorkoutLogGUI(Profile p) {
+        this.profile = p;
+        logController = new WorkoutLogController(this.profile);
+        logModel = new WorkoutLog();
+        this.profile = p;
+        //System.out.println(this.profile.getUserName());
+        initComponents();
+    }
     public WorkoutLogGUI() {
         logController = new WorkoutLogController();
         logModel = new WorkoutLog();
+
         initComponents();
     }
 
@@ -268,7 +278,8 @@ public class WorkoutLogGUI extends javax.swing.JFrame {
     }
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        System.out.println("This is where we cancel the GUI");
+        this.setVisible(false);
+
         // TODO add your handling code here:
     }
 
@@ -315,8 +326,8 @@ public class WorkoutLogGUI extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new WorkoutLogGUI().setVisible(true);
+           public void run() {
+               new WorkoutLogGUI().setVisible(true);
             }
         });
     }
@@ -339,5 +350,7 @@ public class WorkoutLogGUI extends javax.swing.JFrame {
     private javax.swing.JButton saveButton;
     private javax.swing.JTextField setsTextField;
     private javax.swing.JTextField weightTextField;
+    public Profile profile;
+
     // End of variables declaration
 }

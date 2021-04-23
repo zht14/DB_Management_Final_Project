@@ -6,27 +6,27 @@ public class Exercise {
     private int reps;
 
     public Exercise(){
-        name = "";
-        description = "";
-        weight = 0.0;
-        sets = 0;
-        reps = 0;
+        this.name = "";
+        this.description = "";
+        this.weight = 0.0;
+        this.sets = 0;
+        this.reps = 0;
     }
 
     public Exercise(String n, String d){
-        name = n;
-        description = d;
-        weight = 0.0;
-        sets = 0;
-        reps = 0;
+        this.name = n;
+        this.description = d;
+        this.weight = 0.0;
+        this.sets = 0;
+        this.reps = 0;
     }
 
     public Exercise(String n, String d, double w, int s, int r){
-        name = n;
-        description = d;
-        weight = w;
-        sets = s;
-        reps = r;
+        this.name = n;
+        this.description = d;
+        this.weight = w;
+        this.sets = s;
+        this.reps = r;
     }
 
     public String getName() {

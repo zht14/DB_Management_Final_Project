@@ -145,7 +145,8 @@ public class DashBoard extends javax.swing.JFrame {
         jLabelLoc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelLoc.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                //jLabelLocMouseClicked(evt);
+                jLabelLocMouseClicked(evt);
+
             }
         });
 
@@ -159,7 +160,7 @@ public class DashBoard extends javax.swing.JFrame {
 
         jLabelLocChar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelLocChar.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelLocChar.setText("Location");
+        jLabelLocChar.setText("Gym");
 
         jLabelLog.setIcon(new javax.swing.ImageIcon("./log.png")); // NOI18N
         jLabelLog.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -205,7 +206,7 @@ public class DashBoard extends javax.swing.JFrame {
                                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(132, 132, 132))
                                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGap(465, 465, 465)
+                                                .addGap(478, 478, 478)
                                                 .addComponent(jLabelLocChar)
                                                 .addGap(132, 132, 132))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -323,7 +324,8 @@ public class DashBoard extends javax.swing.JFrame {
 
     private void jLabelLocMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBMICalcMouseClicked
         //Add your code
-        // return;
+        Gym g = new Gym();
+        g.initComponents();
     }
 
     private void btnTimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTimerMouseClicked
@@ -337,7 +339,7 @@ public class DashBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_btnStopwatchMouseClicked
 
     private void jLabelLogMouseClicked(java.awt.event.MouseEvent evt) {
-        WorkoutLogGUI logGUIworkout = new WorkoutLogGUI();
+        WorkoutLogGUI logGUIworkout = new WorkoutLogGUI(this.profile);
         logGUIworkout.setVisible(true);
     }
 

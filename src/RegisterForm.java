@@ -592,6 +592,7 @@ public class RegisterForm extends javax.swing.JFrame {
 
     private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
         this.dispose();// TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
     private void jTextFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFirstNameActionPerformed

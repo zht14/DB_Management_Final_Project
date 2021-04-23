@@ -236,6 +236,7 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelMinimizeMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.exit(1);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

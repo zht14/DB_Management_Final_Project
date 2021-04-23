@@ -28,6 +28,8 @@ public class profileConnector {
         }
         
     }
+
+
     
     public boolean addProfile(Profile e){
         try {
